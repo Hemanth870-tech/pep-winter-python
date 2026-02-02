@@ -25,3 +25,53 @@ After a new collaborator is added you will clone the repo:
 16. To push you need to use word remote = git push remote <branch-name>
 
 After inviting a collaborator to do changes he used git clone and pushed it.
+
+
+### TAILWIND CONTINUE:
+1. Let’s also add and configure django_browser_reload, which takes care of automatic page and CSS refreshes in development mode. Add it to INSTALLED_APPS in settings.py:
+
+INSTALLED_APPS = [
+    # other Django apps
+    "tailwind",
+    "theme",
+]
+if DEBUG:
+    # Add django_browser_reload only in DEBUG mode
+    INSTALLED_APPS += ["django_browser_reload"]
+
+2. Staying in settings.py, add the middleware:
+
+if DEBUG:
+    # Add django_browser_reload middleware only in DEBUG mode
+    MIDDLEWARE += [
+        "django_browser_reload.middleware.BrowserReloadMiddleware",
+    ]
+
+
+The middleware should be listed after any that encode the response, such as Django’s GZipMiddleware. The middleware automatically inserts the required script tag on HTML responses before </body> when DEBUG is True.
+
+3. Include django_browser_reload URL in your root urls.py:
+
+from django.urls import include, path
+from django.conf import settings
+urlpatterns = [
+    # other URL patterns
+]
+if settings.DEBUG:
+    # Include django_browser_reload URLs only in DEBUG mode
+    urlpatterns += [
+        path("__reload__/", include("django_browser_reload.urls")),
+    ]
+
+
+Finally, you should be able to use Tailwind CSS classes in HTML. You have two options to start development:
+
+Option 1 (Recommended): Start both Django and Tailwind development servers simultaneously:
+
+python manage.py tailwind dev
+
+Option 2: Start only the Tailwind watcher (you’ll need to run python manage.py runserver separately):
+
+python manage.py tailwind start
+
+Check out the Usage section for more details and information about the production mode.
