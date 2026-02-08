@@ -194,7 +194,7 @@ admin.site.register(SignupUser)
 9. -> python manage.py migrate
 10. -> python manage.py runserver
 
-### The study that i ahve done upon these things are:
+### The study that i have done upon these things are:
 What is Django?
 Django is a complete web development framework built with Python. It provides everything needed to create web applications quickly without dealing with low-level details. Think of it as a toolbox with pre-built components for common web development tasks.
 
