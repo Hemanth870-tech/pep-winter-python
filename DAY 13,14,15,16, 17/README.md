@@ -4,7 +4,7 @@
 
 A **feature-rich, interactive portfolio website** built with **Django** backend and modern **JavaScript** frontend, showcasing cloud engineering, DevOps practices, and Docker projects.
 
-![Portfolio Preview](![alt text](image.png))
+![Portfolio Preview](![alt text](image-8.png))
 
 ---
 
@@ -474,13 +474,13 @@ my-profile/
 
 ### SCREENSHOTS KEY FEATURES :
 1. PROJECT FEATURES FRONTEND:
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](image-9.png)
+![alt text](image-10.png)
+![alt text](image-11.png)
+![alt text](image-12.png)
 
 2. DJANGO DATABASE:
-![alt text](image-5.png)
+![alt text](image-13.png)
 
 3. DBEAVER:
 ![alt text](image-6.png)
